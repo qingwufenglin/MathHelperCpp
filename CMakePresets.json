@@ -1,0 +1,123 @@
+{
+  "version": 4,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 21,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "ninja-debug",
+      "displayName": "Ninja Debug (Cross VS Version)",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "ninja-release",
+      "displayName": "Ninja Release (Cross VS Version)",
+      "generator": "Ninja Multi-Config",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "ninja-debug-lite",
+      "displayName": "Ninja Debug (No Tests)",
+      "inherits": "ninja-debug",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20",
+        "MATHHELPER_BUILD_TESTS": "OFF"
+      }
+    },
+    {
+      "name": "vs2022-debug",
+      "displayName": "VS2022 Debug",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "vs2022-release",
+      "displayName": "VS2022 Release",
+      "generator": "Visual Studio 17 2022",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "vs2026-debug",
+      "displayName": "VS2026 Debug",
+      "generator": "Visual Studio 18 2026",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    },
+    {
+      "name": "vs2026-release",
+      "displayName": "VS2026 Release",
+      "generator": "Visual Studio 18 2026",
+      "binaryDir": "${sourceDir}/build/${presetName}",
+      "cacheVariables": {
+        "CMAKE_CXX_STANDARD": "20"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "build-ninja-debug",
+      "configurePreset": "ninja-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-ninja-release",
+      "configurePreset": "ninja-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "build-ninja-debug-lite",
+      "configurePreset": "ninja-debug-lite",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-vs2022-debug",
+      "configurePreset": "vs2022-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-vs2022-release",
+      "configurePreset": "vs2022-release",
+      "configuration": "Release"
+    },
+    {
+      "name": "build-vs2026-debug",
+      "configurePreset": "vs2026-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "build-vs2026-release",
+      "configurePreset": "vs2026-release",
+      "configuration": "Release"
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "test-ninja-debug",
+      "configurePreset": "ninja-debug",
+      "configuration": "Debug"
+    },
+    {
+      "name": "test-vs2026-debug",
+      "configurePreset": "vs2026-debug",
+      "configuration": "Debug"
+    }
+  ]
+}
