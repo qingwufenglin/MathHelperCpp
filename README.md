@@ -28,8 +28,6 @@ MathHelperCpp
 │   ├── ui/console_ui.cpp
 │   └── main.cpp
 ├── tests/smoke_main.cpp
-├── docs/工程化设计说明.md
-├── docs/简历项目描述模板.md
 ├── CMakeLists.txt
 └── CMakePresets.json
 ```
